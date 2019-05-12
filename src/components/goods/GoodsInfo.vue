@@ -101,6 +101,14 @@
             },
             addToShopCar() {
                 this.ballFlag = !this.ballFlag;
+                let goodsinfo = {
+                    id: this.id,
+                    count: this.selectedCount,
+                    price: this.info.sell_price,
+                    selected: true
+                };
+
+                this.$store.commit('addToCar', goodsinfo);
             },
             beforeEnter(el) {
                 el.style.transform = "translate(0, 0)";
